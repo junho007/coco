@@ -11,7 +11,7 @@ import { Language } from './types';
 import raftImg from './assets/raft.jpeg';
 import tianxingImg from './assets/tianxing.jpeg';
 import aflImg from './assets/afl.jpeg';
-// import alipayImg from './assets/alipay.jpg'; // Optional: Uncomment if you use it later
+import alipayImg from './assets/alipay.jpg'; 
 
 // Videos
 // import raftVideo from './assets/raft.mp4'; // <--- SKIPPED for now (Placeholder will show)
@@ -104,6 +104,7 @@ const App: React.FC = () => {
                 lang={lang}
                 content={t.cards.alipay}
                 labels={t.products}
+                imageSrc={alipayImg}
                 details={{
                     tiers: PRODUCT_DETAILS.alipay.tiers,
                     rules: getLangString(PRODUCT_DETAILS.alipay, 'rules')
