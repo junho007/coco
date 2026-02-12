@@ -10,7 +10,7 @@ export const Footer = () => {
           <img 
             src={logo} 
             alt="Cocopay Logo" 
-            className="h-8 w-auto grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all" 
+            className="h-8 w-auto"
           />
           <p className="mt-4 text-sm text-gray-500">© 2026 COCOPAY. All rights reserved.</p>
         </div>
