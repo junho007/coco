@@ -8,14 +8,17 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ t }) => {
   return (
-    <div className="relative bg-[#111827] overflow-hidden">
+    // 👇 1. ADDED: min-h-screen, flex, items-center, justify-center
+    <div className="relative bg-[#111827] overflow-hidden min-h-screen flex items-center justify-center">
+      
       {/* Background gradients */}
-      <div className="absolute top-0 left-1/2 w-full -translate-x-1/2 h-full overflow-hidden z-0">
+      <div className="absolute top-0 left-1/2 w-full -translate-x-1/2 h-full overflow-hidden z-0 pointer-events-none">
          <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-orange-600/20 rounded-full blur-[120px]" />
          <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[60%] bg-blue-600/10 rounded-full blur-[100px]" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-24 md:pt-40 md:pb-32 flex flex-col items-center text-center">
+      {/* 👇 2. REMOVED: Huge vertical paddings (pt-32 pb-24). ADDED: pt-20 to offset your fixed navbar */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 flex flex-col items-center text-center">
         
         <div className="inline-flex items-center space-x-2 bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-full px-4 py-1.5 mb-8 transform hover:scale-105 transition-transform duration-300 cursor-default">
           <span className="flex h-2 w-2 relative">
