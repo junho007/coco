@@ -32,7 +32,7 @@ export const TelegramWidget: React.FC<TelegramWidgetProps> = ({ lang }) => {
       >
         <div className="bg-primary p-4 text-white flex justify-between items-center">
           <div className="flex items-center space-x-2">
-            <MessageCircle className="w-5 h-5" />
+            <MessageCircle className="w-8 h-8" />
             <span className="font-semibold">
               {lang === 'en' ? 'Contact Support' : '联系客服'}
             </span>
@@ -41,7 +41,7 @@ export const TelegramWidget: React.FC<TelegramWidgetProps> = ({ lang }) => {
             onClick={() => setIsOpen(false)}
             className="text-white/80 hover:text-white transition-colors"
           >
-            <X className="w-5 h-5" />
+            <X className="w-8 h-8" />
           </button>
         </div>
         
@@ -54,7 +54,7 @@ export const TelegramWidget: React.FC<TelegramWidgetProps> = ({ lang }) => {
           </p>
           
           {/* 👇 3. Your custom QR code image is used here */}
-          <div className="w-40 h-40 bg-gray-100 rounded-xl p-2 mb-4 border border-gray-200 flex items-center justify-center">
+          <div className="w-56 h-56 bg-gray-100 rounded-xl p-2 mb-4 border border-gray-200 flex items-center justify-center">
             <img 
               src={qrCodeImg} 
               alt="Telegram QR Code" 
