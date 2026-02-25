@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { MessageCircle, X } from 'lucide-react';
 import { Language } from '../types';
+import qrCodeImg from '../assets/qr.png'; 
 
 interface TelegramWidgetProps {
   lang: Language;
@@ -45,30 +46,23 @@ export const TelegramWidget: React.FC<TelegramWidgetProps> = ({ lang }) => {
         </div>
         
         <div className="p-6 flex flex-col items-center">
+          {/* 👇 2. Text updated to remove the "click below" instruction */}
           <p className="text-gray-600 text-sm text-center mb-4">
             {lang === 'en' 
-              ? 'Scan QR code or click below to chat with us on Telegram' 
-              : '扫描二维码或点击下方按钮在 Telegram 上与我们联系'}
+              ? 'Scan QR code to chat with us on Telegram' 
+              : '扫描二维码在 Telegram 上与我们联系'}
           </p>
           
-          {/* QR Code Placeholder - Replace src with actual QR code image */}
+          {/* 👇 3. Your custom QR code image is used here */}
           <div className="w-40 h-40 bg-gray-100 rounded-xl p-2 mb-4 border border-gray-200 flex items-center justify-center">
             <img 
-              src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://t.me/your_telegram_username" 
+              src={qrCodeImg} 
               alt="Telegram QR Code" 
               className="w-full h-full object-contain"
             />
           </div>
           
-          <a 
-            href="https://t.me/your_telegram_username" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="w-full py-2.5 px-4 bg-primary hover:bg-primary/90 text-white text-sm font-medium rounded-xl transition-colors text-center flex items-center justify-center space-x-2"
-          >
-            <MessageCircle className="w-4 h-4" />
-            <span>{lang === 'en' ? 'Open Telegram' : '打开 Telegram'}</span>
-          </a>
+          {/* The link button has been completely removed from here */}
         </div>
       </div>
 
