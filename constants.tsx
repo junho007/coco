@@ -135,8 +135,8 @@ export const CONTENT: Record<string, Translation> = {
 // Raw data for tables that doesn't change structure but might change label based on language
 export const PRODUCT_DETAILS = {
   raft: {
-    fees_cn: "REQUEST",
-    fees_en: "询问",
+    fees_cn: "询问",
+    fees_en: "REQUEST",
     settlement_cn: "D0 (回U欧易支付宝三档上0.12)",
     settlement_en: "D0 (USDT/OKX Tier 3 + 0.12)",
     settlement_method_cn: "USDT (TRC-20)；国际remittance 可谈",
