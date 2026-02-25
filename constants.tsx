@@ -135,7 +135,7 @@ export const CONTENT: Record<string, Translation> = {
 // Raw data for tables that doesn't change structure but might change label based on language
 export const PRODUCT_DETAILS = {
   raft: {
-    fees: "REQUEST",
+    fees: "询问",
     settlement_cn: "D0 (回U欧易支付宝三档上0.12)",
     settlement_en: "D0 (USDT/OKX Tier 3 + 0.12)",
     settlement_method_cn: "USDT (TRC-20)；国际remittance 可谈",
@@ -152,7 +152,7 @@ export const PRODUCT_DETAILS = {
     ]
   },
   tianxing: {
-    fees: "REQUEST",
+    fees: "询问",
     settlement_cn: "D0 (回U欧易支付宝三档上0.12)",
     settlement_en: "D0 (USDT/OKX Tier 3 + 0.12)",
     settlement_method_cn: "USDT (TRC-20)；国际remittance 可谈",
@@ -165,7 +165,7 @@ export const PRODUCT_DETAILS = {
     ]
   },
   afl: {
-    fees: "REQUEST",
+    fees: "询问",
     settlement_cn: "D0 (回U欧易支付宝三档上0.12)",
     settlement_en: "D0 (USDT/OKX Tier 3 + 0.12)",
     settlement_method_cn: "USDT (TRC-20)；国际remittance 可谈",
@@ -201,8 +201,8 @@ export const PRODUCT_DETAILS = {
       },
     ],
     rules_cn: [
-      "支付宝代收：REQUEST",
-      "结算USDT 汇率参考okx c2c 盘口模式第三档 上浮最高0.03",
+      "支付宝代收：询问",
+      "结算USDT 汇率参考okx c2c 盘口模式第三档 上浮最高0.02",
       "支付宝代收交易时间：9:00-24:00 每日23:00-24:00为日切时间",
       "结算USDT，最低结算要求7000U起",
       "结算 D0",
