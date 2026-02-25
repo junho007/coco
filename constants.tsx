@@ -135,7 +135,7 @@ export const CONTENT: Record<string, Translation> = {
 // Raw data for tables that doesn't change structure but might change label based on language
 export const PRODUCT_DETAILS = {
   raft: {
-    fees: "0%",
+    fees: "REQUEST",
     settlement_cn: "D0 (回U欧易支付宝三档上0.12)",
     settlement_en: "D0 (USDT/OKX Tier 3 + 0.12)",
     settlement_method_cn: "USDT (TRC-20)；国际remittance 可谈",
@@ -152,7 +152,7 @@ export const PRODUCT_DETAILS = {
     ]
   },
   tianxing: {
-    fees: "0%",
+    fees: "REQUEST",
     settlement_cn: "D0 (回U欧易支付宝三档上0.12)",
     settlement_en: "D0 (USDT/OKX Tier 3 + 0.12)",
     settlement_method_cn: "USDT (TRC-20)；国际remittance 可谈",
@@ -165,7 +165,7 @@ export const PRODUCT_DETAILS = {
     ]
   },
   afl: {
-    fees: "0%",
+    fees: "REQUEST",
     settlement_cn: "D0 (回U欧易支付宝三档上0.12)",
     settlement_en: "D0 (USDT/OKX Tier 3 + 0.12)",
     settlement_method_cn: "USDT (TRC-20)；国际remittance 可谈",
@@ -201,7 +201,7 @@ export const PRODUCT_DETAILS = {
       },
     ],
     rules_cn: [
-      "支付宝代收：0%",
+      "支付宝代收：REQUEST",
       "结算USDT 汇率参考okx c2c 盘口模式第三档 上浮最高0.03",
       "支付宝代收交易时间：9:00-24:00 每日23:00-24:00为日切时间",
       "结算USDT，最低结算要求7000U起",
@@ -209,7 +209,7 @@ export const PRODUCT_DETAILS = {
       "实时结算客户，日切时间结清当日全部款项"
     ],
     rules_en: [
-      "Alipay Collection Fee: 0%",
+      "Alipay Collection Fee: REQUEST",
       "USDT Settlement Rate: OKX C2C Market Tier 3 + max 0.03",
       "Transaction Hours: 09:00 - 24:00 (Daily cut-off 23:00-24:00)",
       "Min Settlement: 7000 USDT",
