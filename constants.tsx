@@ -135,7 +135,8 @@ export const CONTENT: Record<string, Translation> = {
 // Raw data for tables that doesn't change structure but might change label based on language
 export const PRODUCT_DETAILS = {
   raft: {
-    fees: "询问",
+    fees_cn: "REQUEST",
+    fees_en: "询问",
     settlement_cn: "D0 (回U欧易支付宝三档上0.12)",
     settlement_en: "D0 (USDT/OKX Tier 3 + 0.12)",
     settlement_method_cn: "USDT (TRC-20)；国际remittance 可谈",
@@ -152,7 +153,8 @@ export const PRODUCT_DETAILS = {
     ]
   },
   tianxing: {
-    fees: "询问",
+    fees_cn: "询问",
+    fees_en: "REQUEST",
     settlement_cn: "D0 (回U欧易支付宝三档上0.12)",
     settlement_en: "D0 (USDT/OKX Tier 3 + 0.12)",
     settlement_method_cn: "USDT (TRC-20)；国际remittance 可谈",
@@ -165,7 +167,8 @@ export const PRODUCT_DETAILS = {
     ]
   },
   afl: {
-    fees: "询问",
+    fees_cn: "询问",
+    fees_en: "REQUEST",
     settlement_cn: "D0 (回U欧易支付宝三档上0.12)",
     settlement_en: "D0 (USDT/OKX Tier 3 + 0.12)",
     settlement_method_cn: "USDT (TRC-20)；国际remittance 可谈",
@@ -210,7 +213,7 @@ export const PRODUCT_DETAILS = {
     ],
     rules_en: [
       "Alipay Collection Fee: REQUEST",
-      "USDT Settlement Rate: OKX C2C Market Tier 3 + max 0.03",
+      "USDT Settlement Rate: OKX C2C Market Tier 3 + max 0.02",
       "Transaction Hours: 09:00 - 24:00 (Daily cut-off 23:00-24:00)",
       "Min Settlement: 7000 USDT",
       "Settlement Time: D0",
