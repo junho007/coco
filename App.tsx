@@ -56,7 +56,7 @@ const App: React.FC = () => {
                 imageSrc={raftImg}
                 // videoSrc={raftVideo} <--- REMOVED this prop
                 details={{
-                    fees: PRODUCT_DETAILS.raft.fees,
+                    fees: getLangString(PRODUCT_DETAILS.raft, 'fees'),
                     settlement: getLangString(PRODUCT_DETAILS.raft, 'settlement'),
                     settlement_method: getLangString(PRODUCT_DETAILS.raft, 'settlement_method'),
                     channels: getLangString(PRODUCT_DETAILS.raft, 'channels'),
@@ -73,7 +73,7 @@ const App: React.FC = () => {
                 imageSrc={tianxingImg}
                 videoSrc={tianxingVideo}
                 details={{
-                    fees: PRODUCT_DETAILS.tianxing.fees,
+                    fees: getLangString(PRODUCT_DETAILS.tianxing, 'fees'),
                     settlement: getLangString(PRODUCT_DETAILS.tianxing, 'settlement'),
                     settlement_method: getLangString(PRODUCT_DETAILS.tianxing, 'settlement_method'),
                     channels: getLangString(PRODUCT_DETAILS.tianxing, 'channels'),
@@ -90,7 +90,7 @@ const App: React.FC = () => {
                 imageSrc={aflImg}
                 videoSrc={aflVideo}
                 details={{
-                    fees: PRODUCT_DETAILS.afl.fees,
+                    fees: getLangString(PRODUCT_DETAILS.afl, 'fees'),
                     settlement: getLangString(PRODUCT_DETAILS.afl, 'settlement'),
                     settlement_method: getLangString(PRODUCT_DETAILS.afl, 'settlement_method'),
                     channels: getLangString(PRODUCT_DETAILS.afl, 'channels'),
