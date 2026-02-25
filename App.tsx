@@ -7,6 +7,16 @@ import { Footer } from './components/Footer';
 import { TelegramWidget } from './components/TelegramWidget';
 import { CONTENT, PRODUCT_DETAILS } from './constants';
 import { Language } from './types';
+import raftImg from './assets/raft.jpeg';
+import tianxingImg from './assets/tianxing.jpeg';
+import aflImg from './assets/afl.jpeg';
+import alipayImg from './assets/alipay.jpg'; 
+
+// Videos
+// import raftVideo from './assets/raft.mp4'; // <--- SKIPPED for now (Placeholder will show)
+import tianxingVideo from './assets/tianxing.mp4';
+import aflVideo from './assets/afl.mp4';
+
 
 const App: React.FC = () => {
   const [lang, setLang] = useState<Language>('en');
@@ -37,13 +47,14 @@ const App: React.FC = () => {
         {/* Products List */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12 pb-32">
             
-            {/* Product 1: Raft */}
+            {/* Product 1: Raft (Video Skipped -> Shows "Coming Soon") */}
             <ProductCard 
                 id="product-raft"
                 lang={lang}
                 content={t.cards.raft}
                 labels={t.products}
-                // videoSrc="/raft-guide.mp4"  <-- To add video: Uncomment and set path to file in public folder
+                imageSrc={raftImg}
+                // videoSrc={raftVideo} <--- REMOVED this prop
                 details={{
                     fees: getLangString(PRODUCT_DETAILS.raft, 'fees'),
                     settlement: getLangString(PRODUCT_DETAILS.raft, 'settlement'),
@@ -59,7 +70,8 @@ const App: React.FC = () => {
                 lang={lang}
                 content={t.cards.tianxing}
                 labels={t.products}
-                // videoSrc="/tianxing-guide.mp4" <-- To add video: Uncomment and set path to file in public folder
+                imageSrc={tianxingImg}
+                videoSrc={tianxingVideo}
                 details={{
                     fees: getLangString(PRODUCT_DETAILS.tianxing, 'fees'),
                     settlement: getLangString(PRODUCT_DETAILS.tianxing, 'settlement'),
@@ -75,7 +87,8 @@ const App: React.FC = () => {
                 lang={lang}
                 content={t.cards.afl}
                 labels={t.products}
-                // videoSrc="/afl-guide.mp4" <-- To add video: Uncomment and set path to file in public folder
+                imageSrc={aflImg}
+                videoSrc={aflVideo}
                 details={{
                     fees: getLangString(PRODUCT_DETAILS.afl, 'fees'),
                     settlement: getLangString(PRODUCT_DETAILS.afl, 'settlement'),
@@ -91,6 +104,7 @@ const App: React.FC = () => {
                 lang={lang}
                 content={t.cards.alipay}
                 labels={t.products}
+                imageSrc={alipayImg}
                 details={{
                     tiers: PRODUCT_DETAILS.alipay.tiers,
                     rules: getLangString(PRODUCT_DETAILS.alipay, 'rules')
