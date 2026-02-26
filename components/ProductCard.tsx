@@ -24,10 +24,11 @@ interface ProductCardProps {
 
 export const ProductCard: React.FC<ProductCardProps> = ({ id, lang, content, details, labels, imageSrc, videoSrc }) => {
   return (
-    <div id={id} className="scroll-mt-24 bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-2xl transition-all duration-300 flex flex-col lg:flex-row">
+    {/* 👇 CRUCIAL FIX 1: Removed 'overflow-hidden' from this main container to prevent it from blocking mobile touches */}
+    <div id={id} className="scroll-mt-24 bg-white rounded-2xl border border-gray-200 hover:shadow-2xl transition-all duration-300 flex flex-col lg:flex-row relative z-0">
       
       {/* Content Side */}
-      <div className="p-8 lg:p-12 flex-1 flex flex-col justify-center">
+      <div className="p-8 lg:p-12 flex-1 flex flex-col justify-center rounded-t-2xl lg:rounded-l-2xl lg:rounded-tr-none bg-white">
         <div className="flex flex-col md:flex-row md:items-start md:space-x-8 mb-8">
             <div className="w-32 h-32 md:w-40 md:h-40 bg-gray-100 rounded-2xl border border-gray-200 flex-shrink-0 flex items-center justify-center overflow-hidden mb-6 md:mb-0 shadow-sm">
                 {imageSrc ? (
@@ -76,8 +77,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({ id, lang, content, det
         </div>
       </div>
 
-      {/* Video Side - Cleaned up to allow native controls to breathe */}
-      <div className="lg:w-[360px] bg-black flex flex-col justify-center border-t lg:border-t-0 lg:border-l border-gray-100">
+      {/* Video Side */}
+      <div className="lg:w-[360px] bg-black flex flex-col justify-center border-t lg:border-t-0 lg:border-l border-gray-100 rounded-b-2xl lg:rounded-r-2xl lg:rounded-bl-none">
          
          {videoSrc ? (
             // Video Player
@@ -86,14 +87,15 @@ export const ProductCard: React.FC<ProductCardProps> = ({ id, lang, content, det
                  controls 
                  playsInline
                  preload="metadata"
-                 className="w-full aspect-[9/16] object-contain bg-black" 
+                 {/* 👇 CRUCIAL FIX 2: Used 'w-full h-auto block' so the browser naturally scales the video. No more misaligned hitboxes. */}
+                 className="w-full h-auto max-h-[70vh] block rounded-b-2xl lg:rounded-r-2xl lg:rounded-bl-none" 
              >
                  <source src={videoSrc} type="video/mp4" />
                  Your browser does not support the video tag.
              </video>
          ) : (
-             // Video Placeholder / Call to Action
-             <div className="w-full aspect-[9/16] relative bg-gray-800">
+             // Video Placeholder
+             <div className="w-full aspect-[9/16] relative bg-gray-800 rounded-b-2xl lg:rounded-r-2xl lg:rounded-bl-none overflow-hidden">
                  <div className="absolute inset-0 bg-gradient-to-b from-gray-800 via-gray-900 to-black opacity-90 z-10"></div>
                  <div className="absolute inset-0 opacity-20 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] z-0 mix-blend-overlay"></div>
                  
