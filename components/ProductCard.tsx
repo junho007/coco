@@ -29,7 +29,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({ id, lang, content, det
       {/* Content Side */}
       <div className="p-8 lg:p-12 flex-1 flex flex-col justify-center">
         <div className="flex flex-col md:flex-row md:items-start md:space-x-8 mb-8">
-            {/* Square Image Placeholder */}
             <div className="w-32 h-32 md:w-40 md:h-40 bg-gray-100 rounded-2xl border border-gray-200 flex-shrink-0 flex items-center justify-center overflow-hidden mb-6 md:mb-0 shadow-sm">
                 {imageSrc ? (
                     <img src={imageSrc} alt={content.name} className="w-full h-full object-cover" />
@@ -77,44 +76,38 @@ export const ProductCard: React.FC<ProductCardProps> = ({ id, lang, content, det
         </div>
       </div>
 
-      {/* Video Side - Enforce 9:16 Aspect Ratio */}
-      <div className="lg:w-[360px] bg-gray-900 relative group overflow-hidden flex flex-col justify-center border-t lg:border-t-0 lg:border-l border-gray-100">
-         {/* Container specifically updated to center everything perfectly */}
-         <div className="w-full aspect-[9/16] relative bg-black flex items-center justify-center">
-            {videoSrc ? (
-               // Video Player
-                <video 
-                    key={videoSrc}
-                    controls 
-                    playsInline
-                    webkit-playsinline="true" 
-                    preload="metadata"
-                    controlsList="nodownload noplaybackrate"
-                    disablePictureInPicture
-                    // Video completely fills the box but maintains aspect ratio without clipping controls
-                    className="absolute inset-0 w-full h-full object-contain z-20" 
-                >
-                    <source src={videoSrc} type="video/mp4" />
-                    Your browser does not support the video tag.
-                </video>
-            ) : (
-                // Video Placeholder / Call to Action
-                <div className="w-full h-full relative bg-gray-800">
-                    <div className="absolute inset-0 bg-gradient-to-b from-gray-800 via-gray-900 to-black opacity-90 z-10"></div>
-                    <div className="absolute inset-0 opacity-20 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] z-0 mix-blend-overlay"></div>
-                    
-                    <div className="absolute inset-0 flex flex-col items-center justify-center z-20 transition-transform duration-500 cursor-default">
-                        <div className="w-20 h-20 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20 shadow-2xl mb-6">
-                            <Play className="w-8 h-8 text-white/50 fill-white/50 ml-1" />
-                        </div>
-                        <div className="text-center px-8">
-                             <p className="text-white/80 font-bold text-xl mb-2">{labels.videoGuide}</p>
-                             <p className="text-gray-500 text-sm leading-relaxed">Coming soon</p>
-                        </div>
-                    </div>
-                </div>
-            )}
-         </div>
+      {/* Video Side - Cleaned up to allow native controls to breathe */}
+      <div className="lg:w-[360px] bg-black flex flex-col justify-center border-t lg:border-t-0 lg:border-l border-gray-100">
+         
+         {videoSrc ? (
+            // Video Player
+             <video 
+                 key={videoSrc}
+                 controls 
+                 playsInline
+                 preload="metadata"
+                 className="w-full aspect-[9/16] object-contain bg-black" 
+             >
+                 <source src={videoSrc} type="video/mp4" />
+                 Your browser does not support the video tag.
+             </video>
+         ) : (
+             // Video Placeholder / Call to Action
+             <div className="w-full aspect-[9/16] relative bg-gray-800">
+                 <div className="absolute inset-0 bg-gradient-to-b from-gray-800 via-gray-900 to-black opacity-90 z-10"></div>
+                 <div className="absolute inset-0 opacity-20 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] z-0 mix-blend-overlay"></div>
+                 
+                 <div className="absolute inset-0 flex flex-col items-center justify-center z-20 transition-transform duration-500 cursor-default">
+                     <div className="w-20 h-20 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20 shadow-2xl mb-6">
+                         <Play className="w-8 h-8 text-white/50 fill-white/50 ml-1" />
+                     </div>
+                     <div className="text-center px-8">
+                          <p className="text-white/80 font-bold text-xl mb-2">{labels.videoGuide}</p>
+                          <p className="text-gray-500 text-sm leading-relaxed">Coming soon</p>
+                     </div>
+                 </div>
+             </div>
+         )}
       </div>
     </div>
   );
