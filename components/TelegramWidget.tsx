@@ -22,11 +22,14 @@ export const TelegramWidget: React.FC<TelegramWidgetProps> = ({ lang }) => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+    {/* 👇 1. ADDED 'pointer-events-none' to the main wrapper so the invisible box doesn't steal clicks */}
+    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end pointer-events-none">
+      
       {/* Popover Content */}
       <div 
         className={`mb-4 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden transition-all duration-300 origin-bottom-right ${
-          isOpen ? 'scale-100 opacity-100' : 'scale-0 opacity-0 pointer-events-none'
+          // 👇 2. ADDED 'pointer-events-auto' when open so the popup itself is still clickable
+          isOpen ? 'scale-100 opacity-100 pointer-events-auto' : 'scale-0 opacity-0 pointer-events-none'
         }`}
         style={{ width: '280px' }}
       >
@@ -46,14 +49,12 @@ export const TelegramWidget: React.FC<TelegramWidgetProps> = ({ lang }) => {
         </div>
         
         <div className="p-6 flex flex-col items-center">
-          {/* 👇 2. Text updated to remove the "click below" instruction */}
           <p className="text-gray-600 text-sm text-center mb-4">
             {lang === 'en' 
               ? 'Scan QR code to chat with us on Telegram' 
               : '扫描二维码在 Telegram 上与我们联系'}
           </p>
           
-          {/* 👇 3. Your custom QR code image is used here */}
           <div className="w-56 h-56 bg-gray-100 rounded-xl p-2 mb-4 border border-gray-200 flex items-center justify-center">
             <img 
               src={qrCodeImg} 
@@ -61,15 +62,14 @@ export const TelegramWidget: React.FC<TelegramWidgetProps> = ({ lang }) => {
               className="w-full h-full object-contain"
             />
           </div>
-          
-          {/* The link button has been completely removed from here */}
         </div>
       </div>
 
       {/* Floating Action Button */}
+      {/* 👇 3. ADDED 'pointer-events-auto' directly to the button so only the circle is clickable */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`w-14 h-14 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group relative ${
+        className={`pointer-events-auto w-14 h-14 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group relative ${
           isOpen ? 'bg-primary animate-pulse' : 'bg-primary hover:bg-primary/90'
         }`}
         aria-label="Contact Support"
