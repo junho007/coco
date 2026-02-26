@@ -85,7 +85,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({ id, lang, content, det
                 <video 
                     key={videoSrc}
                     controls 
-                    className="w-full h-full object-cover" 
+                    // 👇 THE FIX: Changed 'object-cover' to 'object-contain bg-black'
+                    className="w-full h-full object-contain bg-black" 
                     playsInline
                     preload="metadata"
                     poster={imageSrc}
