@@ -24,11 +24,12 @@ interface ProductCardProps {
 
 export const ProductCard: React.FC<ProductCardProps> = ({ id, lang, content, details, labels, imageSrc, videoSrc }) => {
   return (
-    <div id={id} className="scroll-mt-24 bg-white rounded-2xl border border-gray-200 hover:shadow-2xl transition-all duration-300 flex flex-col lg:flex-row relative z-0">
+    <div id={id} className="scroll-mt-24 bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-2xl transition-all duration-300 flex flex-col lg:flex-row">
       
-      {/* Content Side - Explicitly set to a lower layer (z-10) so it cannot overlap the video */}
-      <div className="p-8 lg:p-12 flex-1 flex flex-col justify-center rounded-t-2xl lg:rounded-l-2xl lg:rounded-tr-none bg-white relative z-10">
+      {/* Content Side */}
+      <div className="p-8 lg:p-12 flex-1 flex flex-col justify-center">
         <div className="flex flex-col md:flex-row md:items-start md:space-x-8 mb-8">
+            {/* Square Image Placeholder */}
             <div className="w-32 h-32 md:w-40 md:h-40 bg-gray-100 rounded-2xl border border-gray-200 flex-shrink-0 flex items-center justify-center overflow-hidden mb-6 md:mb-0 shadow-sm">
                 {imageSrc ? (
                     <img src={imageSrc} alt={content.name} className="w-full h-full object-cover" />
@@ -76,42 +77,38 @@ export const ProductCard: React.FC<ProductCardProps> = ({ id, lang, content, det
         </div>
       </div>
 
-      {/* Video Side - THE NUCLEAR FIX */}
-      {/* 1. Added 'z-50' and 'isolate' to completely separate this section from the text layout */}
-      <div className="lg:w-[360px] bg-black flex flex-col justify-center border-t lg:border-t-0 lg:border-l border-gray-100 rounded-b-2xl lg:rounded-r-2xl lg:rounded-bl-none relative z-50 isolate">
-         
-         {videoSrc ? (
-            // 2. Wrapped the video in a dedicated, isolated block with the absolute highest z-index
-            <div className="w-full relative z-[90] block pointer-events-auto">
-                 <video 
-                     key={videoSrc}
-                     controls 
-                     playsInline
-                     preload="metadata"
-                     // 3. Forced z-[100] and explicitly enabled pointer-events so nothing can block taps
-                     className="w-full h-auto block relative z-[100] pointer-events-auto" 
-                 >
-                     <source src={videoSrc} type="video/mp4" />
-                     Your browser does not support the video tag.
-                 </video>
-            </div>
-         ) : (
-             // Video Placeholder
-             <div className="w-full aspect-[9/16] relative bg-gray-800 rounded-b-2xl lg:rounded-r-2xl lg:rounded-bl-none overflow-hidden">
-                 <div className="absolute inset-0 bg-gradient-to-b from-gray-800 via-gray-900 to-black opacity-90 z-10"></div>
-                 <div className="absolute inset-0 opacity-20 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] z-0 mix-blend-overlay"></div>
-                 
-                 <div className="absolute inset-0 flex flex-col items-center justify-center z-20 transition-transform duration-500 cursor-default">
-                     <div className="w-20 h-20 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20 shadow-2xl mb-6">
-                         <Play className="w-8 h-8 text-white/50 fill-white/50 ml-1" />
-                     </div>
-                     <div className="text-center px-8">
-                          <p className="text-white/80 font-bold text-xl mb-2">{labels.videoGuide}</p>
-                          <p className="text-gray-500 text-sm leading-relaxed">Coming soon</p>
-                     </div>
-                 </div>
-             </div>
-         )}
+      {/* Video Side - Enforce 9:16 Aspect Ratio */}
+      <div className="lg:w-[360px] bg-gray-900 relative group overflow-hidden flex flex-col justify-center border-t lg:border-t-0 lg:border-l border-gray-100">
+         <div className="w-full aspect-[9/16] relative bg-black">
+            {videoSrc ? (
+               // Video Player
+                <video 
+                    key={videoSrc}
+                    controls 
+                    className="w-full h-full object-cover" 
+                    playsInline
+                >
+                    <source src={videoSrc} type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+            ) : (
+                // Video Placeholder / Call to Action
+                <div className="w-full h-full relative bg-gray-800">
+                    <div className="absolute inset-0 bg-gradient-to-b from-gray-800 via-gray-900 to-black opacity-90 z-10"></div>
+                    <div className="absolute inset-0 opacity-20 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] z-0 mix-blend-overlay"></div>
+                    
+                    <div className="absolute inset-0 flex flex-col items-center justify-center z-20 transition-transform duration-500 cursor-default">
+                        <div className="w-20 h-20 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20 shadow-2xl mb-6">
+                            <Play className="w-8 h-8 text-white/50 fill-white/50 ml-1" />
+                        </div>
+                        <div className="text-center px-8">
+                             <p className="text-white/80 font-bold text-xl mb-2">{labels.videoGuide}</p>
+                             <p className="text-gray-500 text-sm leading-relaxed">Coming soon</p>
+                        </div>
+                    </div>
+                </div>
+            )}
+         </div>
       </div>
     </div>
   );
