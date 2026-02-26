@@ -42,26 +42,22 @@ export const CONTENT: Record<string, Translation> = {
       raft: {
         name: "Raft Card",
         type: "Premium Recharge Card",
-        desc: "High-value premium card options for international settlement.",
         image: raftImg,
       },
       tianxing: {
         name: "Tianxing Card",
         type: "Standard Rate Card",
-        desc: "Cost-effective parity card for rapid RMB processing.",
         image: tianxingImg,
         video: tianxingVideo,
       },
       afl: {
         name: "AFL26 Card",
         type: "Standard Rate Card",
-        desc: "Flexible denomination options with instant processing.",
         image: aflImg,
         video: aflVideo,
       },
       alipay: {
         name: "Alipay Collections",
-        desc: "Direct UID collection channels for various transaction sizes.",
         image: alipayImg,
         tiers: {
           small: "Small Amount UID",
@@ -106,21 +102,17 @@ export const CONTENT: Record<string, Translation> = {
       raft: {
         name: "Raft 卡",
         type: "RAFT 溢价卡",
-        desc: "适用于国际结算的高价值溢价充值卡。",
       },
       tianxing: {
         name: "添星卡",
         type: "银盈添星(平价卡)",
-        desc: "极具性价比的平价卡，快速处理人民币业务。",
       },
       afl: {
         name: "AFL26 卡",
         type: "AFL(平价卡)",
-        desc: "灵活的面值选择，即时处理。",
       },
       alipay: {
         name: "支付宝 (Alipay)",
-        desc: "针对不同交易规模的直接 UID 收款通道。",
         tiers: {
           small: "支付宝小额 UID",
           medium: "支付宝中额 UID",
