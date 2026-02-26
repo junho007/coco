@@ -87,6 +87,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({ id, lang, content, det
                     controls 
                     className="w-full h-full object-cover" 
                     playsInline
+                    preload="metadata"
+                    poster={imageSrc}
                 >
                     <source src={videoSrc} type="video/mp4" />
                     Your browser does not support the video tag.
