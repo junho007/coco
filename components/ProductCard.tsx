@@ -24,11 +24,10 @@ interface ProductCardProps {
 
 export const ProductCard: React.FC<ProductCardProps> = ({ id, lang, content, details, labels, imageSrc, videoSrc }) => {
   return (
-    {/* 👇 CRUCIAL FIX 1: Removed 'overflow-hidden' from this main container to prevent it from blocking mobile touches */}
     <div id={id} className="scroll-mt-24 bg-white rounded-2xl border border-gray-200 hover:shadow-2xl transition-all duration-300 flex flex-col lg:flex-row relative z-0">
       
-      {/* Content Side */}
-      <div className="p-8 lg:p-12 flex-1 flex flex-col justify-center rounded-t-2xl lg:rounded-l-2xl lg:rounded-tr-none bg-white">
+      {/* Content Side - Explicitly set to a lower layer (z-10) so it cannot overlap the video */}
+      <div className="p-8 lg:p-12 flex-1 flex flex-col justify-center rounded-t-2xl lg:rounded-l-2xl lg:rounded-tr-none bg-white relative z-10">
         <div className="flex flex-col md:flex-row md:items-start md:space-x-8 mb-8">
             <div className="w-32 h-32 md:w-40 md:h-40 bg-gray-100 rounded-2xl border border-gray-200 flex-shrink-0 flex items-center justify-center overflow-hidden mb-6 md:mb-0 shadow-sm">
                 {imageSrc ? (
@@ -77,22 +76,25 @@ export const ProductCard: React.FC<ProductCardProps> = ({ id, lang, content, det
         </div>
       </div>
 
-      {/* Video Side */}
-      <div className="lg:w-[360px] bg-black flex flex-col justify-center border-t lg:border-t-0 lg:border-l border-gray-100 rounded-b-2xl lg:rounded-r-2xl lg:rounded-bl-none">
+      {/* Video Side - THE NUCLEAR FIX */}
+      {/* 1. Added 'z-50' and 'isolate' to completely separate this section from the text layout */}
+      <div className="lg:w-[360px] bg-black flex flex-col justify-center border-t lg:border-t-0 lg:border-l border-gray-100 rounded-b-2xl lg:rounded-r-2xl lg:rounded-bl-none relative z-50 isolate">
          
          {videoSrc ? (
-            // Video Player
-             <video 
-                 key={videoSrc}
-                 controls 
-                 playsInline
-                 preload="metadata"
-                 {/* 👇 CRUCIAL FIX 2: Used 'w-full h-auto block' so the browser naturally scales the video. No more misaligned hitboxes. */}
-                 className="w-full h-auto max-h-[70vh] block rounded-b-2xl lg:rounded-r-2xl lg:rounded-bl-none" 
-             >
-                 <source src={videoSrc} type="video/mp4" />
-                 Your browser does not support the video tag.
-             </video>
+            // 2. Wrapped the video in a dedicated, isolated block with the absolute highest z-index
+            <div className="w-full relative z-[90] block pointer-events-auto">
+                 <video 
+                     key={videoSrc}
+                     controls 
+                     playsInline
+                     preload="metadata"
+                     // 3. Forced z-[100] and explicitly enabled pointer-events so nothing can block taps
+                     className="w-full h-auto block relative z-[100] pointer-events-auto" 
+                 >
+                     <source src={videoSrc} type="video/mp4" />
+                     Your browser does not support the video tag.
+                 </video>
+            </div>
          ) : (
              // Video Placeholder
              <div className="w-full aspect-[9/16] relative bg-gray-800 rounded-b-2xl lg:rounded-r-2xl lg:rounded-bl-none overflow-hidden">
