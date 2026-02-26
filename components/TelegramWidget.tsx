@@ -22,13 +22,13 @@ export const TelegramWidget: React.FC<TelegramWidgetProps> = ({ lang }) => {
   if (!isVisible) return null;
 
   return (
-    {/* 👇 1. ADDED 'pointer-events-none' to the main wrapper so the invisible box doesn't steal clicks */}
+    // The main wrapper has pointer-events-none so it doesn't steal clicks from the video
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end pointer-events-none">
       
       {/* Popover Content */}
       <div 
         className={`mb-4 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden transition-all duration-300 origin-bottom-right ${
-          // 👇 2. ADDED 'pointer-events-auto' when open so the popup itself is still clickable
+          // The popover itself becomes clickable (pointer-events-auto) only when it is open
           isOpen ? 'scale-100 opacity-100 pointer-events-auto' : 'scale-0 opacity-0 pointer-events-none'
         }`}
         style={{ width: '280px' }}
@@ -42,7 +42,7 @@ export const TelegramWidget: React.FC<TelegramWidgetProps> = ({ lang }) => {
           </div>
           <button 
             onClick={() => setIsOpen(false)}
-            className="text-white/80 hover:text-white transition-colors"
+            className="text-white/80 hover:text-white transition-colors pointer-events-auto"
           >
             <X className="w-8 h-8" />
           </button>
@@ -66,9 +66,9 @@ export const TelegramWidget: React.FC<TelegramWidgetProps> = ({ lang }) => {
       </div>
 
       {/* Floating Action Button */}
-      {/* 👇 3. ADDED 'pointer-events-auto' directly to the button so only the circle is clickable */}
       <button
         onClick={() => setIsOpen(!isOpen)}
+        // pointer-events-auto is directly on the button so ONLY the circle is clickable
         className={`pointer-events-auto w-14 h-14 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group relative ${
           isOpen ? 'bg-primary animate-pulse' : 'bg-primary hover:bg-primary/90'
         }`}
