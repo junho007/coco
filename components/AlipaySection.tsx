@@ -51,11 +51,11 @@ export const AlipaySection: React.FC<AlipaySectionProps> = ({ id, lang, content,
                         <h4 className="text-xl font-bold text-white mb-2 min-h-[40px]">{tierName}</h4>
                         <div className="space-y-2">
                             <div className="flex justify-between items-center text-sm text-blue-100 uppercase font-semibold">
-                                <span>Code</span>
+                                <span>{lang === 'cn' ? '编号' : 'Code'}</span>
                                 <span className="text-white font-mono text-lg">{tier.code}</span>
                             </div>
                             <div className="flex justify-between items-center text-sm text-blue-100 uppercase font-semibold">
-                                <span>Limit</span>
+                                <span>{lang === 'cn' ? '限额' : 'Limit'}</span>
                                 <span className="text-white font-mono font-bold text-lg">{tier.amount}</span>
                             </div>
                         </div>
