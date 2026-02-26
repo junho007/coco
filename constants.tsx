@@ -83,7 +83,7 @@ export const CONTENT: Record<string, Translation> = {
       badge: "最新：加密货币结算已上线 🚀",
       title: "实现收入指数级增长",
       titleHighlight: "首选 COCOPAY",
-      subtitle: "唯一结合传统法币处理与高速结算的支付网关。无缝集成，覆盖全球，极致流畅。",
+      subtitle: "唯一结合传统法币处理与即时结算的支付网关。无缝集成，覆盖全球，极致流畅。",
       ctaPrimary: "立即开始",
       features: {
         pci: "PCI DSS 1级认证",
@@ -93,7 +93,7 @@ export const CONTENT: Record<string, Translation> = {
     },
     products: {
       title: "费率与结算",
-      subtitle: "最大透明度。最小开销。与 COCOPAY 一同成长。",
+      subtitle: "最大透明度。最低开销。与 COCOPAY 一同成长。",
       fees: "费用",
       settlement: "结算时间",
       channels: "购买渠道",
