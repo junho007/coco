@@ -85,11 +85,12 @@ export const ProductCard: React.FC<ProductCardProps> = ({ id, lang, content, det
                 <video 
                     key={videoSrc}
                     controls 
-                    // 👇 THE FIX: Changed 'object-cover' to 'object-contain bg-black'
-                    className="w-full h-full object-cover rounded-xl"
                     playsInline
+                    // 👇 NEW: Apple-specific fallback for inline playing
+                    webkit-playsinline="true" 
+                    // 👇 NEW: Tells Safari to load the video data immediately instead of waiting
                     preload="metadata"
-                    poster={imageSrc}
+                    className="w-full h-full object-cover" 
                 >
                     <source src={videoSrc} type="video/mp4" />
                     Your browser does not support the video tag.
