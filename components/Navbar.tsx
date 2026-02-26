@@ -73,7 +73,7 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t }) => {
               className="flex items-center text-gray-200 hover:text-white transition-colors px-3 py-2 rounded-md hover:bg-white/10"
             >
               <Globe className="w-5 h-5 mr-2" />
-              <span className="text-sm font-semibold">{lang.toUpperCase()}</span>
+              <span className="uppercase text-sm font-bold">{lang === 'cn' ? '中文' : 'EN'}</span>
             </button>
           </div>
 
@@ -110,7 +110,7 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t }) => {
               className="w-full text-left flex items-center text-gray-300 hover:text-white px-3 py-2 rounded-md text-base font-medium"
             >
               <Globe className="w-5 h-5 mr-2" />
-              Switch Language ({lang.toUpperCase()})
+              {lang === 'cn' ? '切换语言 (EN)' : 'Switch Language (中文)'}
             </button>
           </div>
         </div>
