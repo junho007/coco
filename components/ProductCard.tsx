@@ -79,14 +79,20 @@ export const ProductCard: React.FC<ProductCardProps> = ({ id, lang, content, det
 
       {/* Video Side - Enforce 9:16 Aspect Ratio */}
       <div className="lg:w-[360px] bg-gray-900 relative group overflow-hidden flex flex-col justify-center border-t lg:border-t-0 lg:border-l border-gray-100">
-         <div className="w-full aspect-[9/16] relative bg-black">
+         {/* Container specifically updated to center everything perfectly */}
+         <div className="w-full aspect-[9/16] relative bg-black flex items-center justify-center">
             {videoSrc ? (
                // Video Player
                 <video 
                     key={videoSrc}
                     controls 
-                    className="w-full h-full object-cover" 
                     playsInline
+                    webkit-playsinline="true" 
+                    preload="metadata"
+                    controlsList="nodownload noplaybackrate"
+                    disablePictureInPicture
+                    // Video completely fills the box but maintains aspect ratio without clipping controls
+                    className="absolute inset-0 w-full h-full object-contain z-20" 
                 >
                     <source src={videoSrc} type="video/mp4" />
                     Your browser does not support the video tag.
