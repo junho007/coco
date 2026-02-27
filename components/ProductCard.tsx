@@ -90,7 +90,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ id, lang, content, det
                     webkit-playsinline="true" 
                     // 👇 NEW: Tells Safari to load the video data immediately instead of waiting
                     preload="metadata"
-                    className="w-full h-full object-cover" 
+                    className="w-full h-full object-contain bg-black"
                 >
                     <source src={videoSrc} type="video/mp4" />
                     Your browser does not support the video tag.
