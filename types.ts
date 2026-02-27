@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 export type Language = 'en' | 'cn';
 
 export interface Translation {
@@ -21,7 +23,7 @@ export interface Translation {
   };
   products: {
     title: string;
-    subtitle: string;
+    subtitle: string | ReactNode;
     description: string;
     fees: string;
     settlement: string;
