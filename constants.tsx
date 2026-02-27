@@ -77,9 +77,9 @@ export const CONTENT: Record<string, Translation> = {
     },
     hero: {
       badge: "最新：加密货币结算已上线 🚀",
-      title: "实现收入指数级增长",
+      title: "一站式全球支付解决方案 · 国际企业首选平台",
       titleHighlight: "首选 COCOPAY",
-      subtitle: "唯一结合传统法币处理与即时结算的支付网关。无缝集成，覆盖全球，极致流畅。",
+      subtitle: "以专业构建的智能支付系统，打通本地与全球资金通道，助力企业无缝接收全球线上支付，轻松拓展国际市场版图，加速业务增长与资本流转。",
       ctaPrimary: "立即开始",
       features: {
         pci: "PCI DSS 1级认证",
