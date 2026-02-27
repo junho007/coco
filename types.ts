@@ -11,8 +11,8 @@ export interface Translation {
   };
   hero: {
     badge: string;
-    title: string;
-    titleHighlight: string;
+    title: string | ReactNode;
+    titleHighlight: string | ReactNode;
     subtitle: string;
     ctaPrimary: string;
     features: {
