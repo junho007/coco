@@ -22,6 +22,7 @@ export interface Translation {
   products: {
     title: string;
     subtitle: string;
+    description: string;
     fees: string;
     settlement: string;
     channels: string;
