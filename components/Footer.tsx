@@ -12,7 +12,7 @@ export const Footer = () => {
             alt="Cocopay Logo" 
             className="h-8 w-auto"
           />
-          <p className="mt-4 text-sm text-gray-500">© 2026 COCOPAY. All rights reserved.</p>
+          <p className="mt-4 text-sm text-gray-500">© 2009-2026 COCOPAY. All rights reserved.</p>
         </div>
       </div>
     </footer>
