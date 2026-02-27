@@ -80,7 +80,7 @@ export const CONTENT: Record<string, Translation> = {
     hero: {
       badge: "最新：加密货币结算已上线 🚀",
       title: "一站式全球支付解决方案 · 国际企业首选平台",
-      titleHighlight: <><br className="block md:hidden" />首选 COCOPAY</>,
+      titleHighlight: <><br className="block md:hidden" />COCOPAY</>,
       subtitle: "以专业构建的智能支付系统，打通本地与全球资金通道，助力企业无缝接收全球线上支付，轻松拓展国际市场版图，加速业务增长与资本流转。",
       ctaPrimary: "立即开始",
       features: {
@@ -91,7 +91,7 @@ export const CONTENT: Record<string, Translation> = {
     },
     products: {
       title: "费率与结算",
-      subtitle: <>极致透明。成本优化。<br className="block sm:hidden" />与 COCOPAY 共成长。</>,
+      subtitle: <>与 COCOPAY 共同成长<br className="block sm:hidden" />极致透明，成本优化</>,
       description: "我们提供清晰透明的费率结构与高效结算机制，帮助企业有效降低交易成本，优化现金流管理。在保障安全与稳定的同时，让每一笔交易都更具价值，与您共同迈向长期增长",
       fees: "费用",
       settlement: "结算时间",
