@@ -91,7 +91,7 @@ export const CONTENT: Record<string, Translation> = {
     },
     products: {
       title: "费率与结算",
-      subtitle: <>与 COCOPAY 共同成长<br className="block sm:hidden" />极致透明 · 成本优化</>,
+      subtitle: <>与 COCOPAY 共同成长 · <br className="block sm:hidden" />极致透明 · 成本优化</>,
       description: "我们提供清晰透明的费率结构与高效结算机制，帮助企业有效降低交易成本，优化现金流管理。在保障安全与稳定的同时，让每一笔交易都更具价值，与您共同迈向长期增长",
       fees: "费用",
       settlement: "结算时间",
