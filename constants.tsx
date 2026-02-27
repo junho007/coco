@@ -30,6 +30,7 @@ export const CONTENT: Record<string, Translation> = {
     products: {
       title: "Fees & Settlement",
       subtitle: "Maximum transparency. Minimal overhead. Grow with COCOPAY.",
+      description: "",
       fees: "Fees",
       settlement: "Settlement",
       channels: "Channels",
@@ -83,13 +84,14 @@ export const CONTENT: Record<string, Translation> = {
       ctaPrimary: "立即开始",
       features: {
         pci: "PCI DSS 1级认证",
-        payouts: "即时打款",
+        payouts: "实时结算",
         global: "覆盖190+国家",
       }
     },
     products: {
       title: "费率与结算",
       subtitle: "最大透明度。最低开销。与 COCOPAY 一同成长。",
+      description: "我们提供清晰透明的费率结构与高效结算机制，帮助企业有效降低交易成本，优化现金流管理。在保障安全与稳定的同时，让每一笔交易都更具价值，与您共同迈向长期增长",
       fees: "费用",
       settlement: "结算时间",
       channels: "购买渠道",
