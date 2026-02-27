@@ -80,7 +80,7 @@ export const CONTENT: Record<string, Translation> = {
     hero: {
       badge: "最新：加密货币结算已上线 🚀",
       title: "一站式全球支付解决方案 · 国际企业首选平台",
-      titleHighlight: "首选 COCOPAY",
+      titleHighlight: <><br className="block md:hidden" />首选 COCOPAY</>,
       subtitle: "以专业构建的智能支付系统，打通本地与全球资金通道，助力企业无缝接收全球线上支付，轻松拓展国际市场版图，加速业务增长与资本流转。",
       ctaPrimary: "立即开始",
       features: {
