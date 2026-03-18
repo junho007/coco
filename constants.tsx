@@ -1,19 +1,18 @@
 import React from 'react';
 import { Translation } from './types';
 import { CreditCard, Zap, Globe, ShieldCheck } from 'lucide-react';
-import raftImg from './assets/raft.jpeg';
+import gdcImg from './assets/gdc.png';
 import tianxingImg from './assets/tianxing.jpeg';
 import tianxingVideo from './assets/tianxing.mp4';
-import aflImg from './assets/afl.jpeg';
-import aflVideo from './assets/afl.mp4';
+import ark2Img from './assets/ark2.png';
 import alipayImg from './assets/alipay.jpg';
 
 export const CONTENT: Record<string, Translation> = {
   en: {
     nav: {
-      raft: "Raft Card",
+      gdc: "GDC Card",
+      ark2: "ARK2 Card",
       tianxing: "Tianxing Card",
-      afl: "AFL26 Card",
       alipay: "Alipay",
     },
     hero: {
@@ -41,22 +40,21 @@ export const CONTENT: Record<string, Translation> = {
       rules: "Settlement Rules",
     },
     cards: {
-      raft: {
-        name: "Raft Card",
+      gdc: {
+        name: "GDC Card",
         type: "Premium Recharge Card",
-        image: raftImg,
+        image: gdcImg,
+      },
+       ark2: {
+        name: "ARK2 Card",
+        type: "Standard Rate Card",
+        image: ark2Img,
       },
       tianxing: {
         name: "Tianxing Card",
         type: "Standard Rate Card",
         image: tianxingImg,
         video: tianxingVideo,
-      },
-      afl: {
-        name: "AFL26 Card",
-        type: "Standard Rate Card",
-        image: aflImg,
-        video: aflVideo,
       },
       alipay: {
         name: "Alipay Collections",
@@ -72,9 +70,9 @@ export const CONTENT: Record<string, Translation> = {
   },
   cn: {
     nav: {
-      raft: "Raft 卡",
+      gdc: "GDC 卡",
+      ark2: "ARK2 卡",
       tianxing: "添星卡",
-      afl: "AFL26 卡",
       alipay: "支付宝",
     },
     hero: {
@@ -102,17 +100,17 @@ export const CONTENT: Record<string, Translation> = {
       rules: "结算规则",
     },
     cards: {
-      raft: {
-        name: "Raft 卡",
-        type: "RAFT 溢价卡",
+      gdc: {
+        name: "GDC 卡",
+        type: "GDC 溢价卡",
+      },
+      ark2: {
+        name: "ARK2 卡",
+        type: "ARK2(平价卡)",
       },
       tianxing: {
         name: "添星卡",
         type: "银盈添星(平价卡)",
-      },
-      afl: {
-        name: "AFL26 卡",
-        type: "AFL(平价卡)",
       },
       alipay: {
         name: "支付宝 (Alipay)",
@@ -129,16 +127,40 @@ export const CONTENT: Record<string, Translation> = {
 
 // Raw data for tables that doesn't change structure but might change label based on language
 export const PRODUCT_DETAILS = {
-  raft: {
+  gdc: {
     fees_cn: "询问",
     fees_en: "REQUEST",
     settlement_cn: "D0 (回U欧易支付宝三档上0.12)",
     settlement_en: "D0 (USDT/OKX Tier 3 + 0.12)",
     settlement_method_cn: "USDT (TRC-20)；国际remittance 可谈",
     settlement_method_en: "USDT (TRC-20); Intl Remittance Negotiable",
-    channels_cn: "淘宝, 天猫, 京东 (搜 Raft Card / Raft卡)",
+    channels_cn: "淘宝, 天猫, 京东 (搜 GDC Card / GDC 卡)",
     channels_en: "Taobao, Tmall, JD (Search Raft Card)",
     denominations: [
+      "EUR 1.5 = CNY 11",
+      "EUR 3 = CNY 22",
+      "EUR 4.5 = CNY 33",
+      "EUR 7 = CNY 50",
+      "EUR 14 = CNY 100",
+      "EUR 28 = CNY 200",
+      "EUR 42 = CNY 300",
+      "EUR 70 = CNY 500",
+      "EUR 140 = CNY 1,000"
+    ]
+  },
+  ark2: {
+    fees_cn: "询问",
+    fees_en: "REQUEST",
+    settlement_cn: "D0 (回U欧易支付宝三档上0.12)",
+    settlement_en: "D0 (USDT/OKX Tier 3 + 0.12)",
+    settlement_method_cn: "USDT (TRC-20)；国际remittance 可谈",
+    settlement_method_en: "USDT (TRC-20); Intl Remittance Negotiable",
+    channels_cn: "淘宝, 天猫, 京东 (搜 ARK2 卡)",
+    channels_en: "Taobao, Tmall, JD (Search ARK2 Card)",
+    denominations: [
+      "EUR 1.5 = CNY 11",
+      "EUR 3 = CNY 22",
+      "EUR 4.5 = CNY 33",
       "EUR 7 = CNY 50",
       "EUR 14 = CNY 100",
       "EUR 28 = CNY 200",
@@ -158,21 +180,7 @@ export const PRODUCT_DETAILS = {
     channels_en: "Taobao, Tmall, JD (Search Tianxing Card)",
     denominations: [
       "RMB 10", "RMB 20", "RMB 30", "RMB 50", "RMB 100", 
-      "RMB 200", "RMB 300", "RMB 500", "RMB 1000"
-    ]
-  },
-  afl: {
-    fees_cn: "询问",
-    fees_en: "REQUEST",
-    settlement_cn: "D0 (回U欧易支付宝三档上0.12)",
-    settlement_en: "D0 (USDT/OKX Tier 3 + 0.12)",
-    settlement_method_cn: "USDT (TRC-20)；国际remittance 可谈",
-    settlement_method_en: "USDT (TRC-20); Intl Remittance Negotiable",
-    channels_cn: "淘宝, 天猫, 京东 (搜 添星卡 - AFL)",
-    channels_en: "Taobao, Tmall, JD (Search Tianxing Card - AFL)",
-    denominations: [
-      "RMB 10", "RMB 20", "RMB 30", "RMB 50", "RMB 100", 
-      "RMB 200", "RMB 300", "RMB 500", "RMB 1000"
+      "RMB 200", "RMB 300", "RMB 500", "RMB 1000"   
     ]
   },
   alipay: {
