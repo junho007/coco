@@ -51,14 +51,14 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t }) => {
           {/* CENTER: Navigation Links (Desktop) */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-6">
-              <button onClick={() => scrollToSection('product-raft')} className="text-gray-200 hover:text-white hover:bg-white/10 px-3 py-2 rounded-md text-sm font-semibold transition-all">
-                {t.raft}
+              <button onClick={() => scrollToSection('product-gdc')} className="text-gray-200 hover:text-white hover:bg-white/10 px-3 py-2 rounded-md text-sm font-semibold transition-all">
+                {t.gdc}
+              </button>
+              <button onClick={() => scrollToSection('product-ark2')} className="text-gray-200 hover:text-white hover:bg-white/10 px-3 py-2 rounded-md text-sm font-semibold transition-all">
+                {t.ark2}
               </button>
               <button onClick={() => scrollToSection('product-tianxing')} className="text-gray-200 hover:text-white hover:bg-white/10 px-3 py-2 rounded-md text-sm font-semibold transition-all">
                 {t.tianxing}
-              </button>
-              <button onClick={() => scrollToSection('product-afl')} className="text-gray-200 hover:text-white hover:bg-white/10 px-3 py-2 rounded-md text-sm font-semibold transition-all">
-                {t.afl}
               </button>
               <button onClick={() => scrollToSection('product-alipay')} className="text-gray-200 hover:text-white hover:bg-white/10 px-3 py-2 rounded-md text-sm font-semibold transition-all">
                 {t.alipay}
@@ -93,14 +93,14 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t }) => {
       {isOpen && (
         <div className="md:hidden bg-[#111827] border-b border-gray-800">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <button onClick={() => scrollToSection('product-raft')} className="w-full text-left text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-              {t.raft}
+            <button onClick={() => scrollToSection('product-gdc')} className="w-full text-left text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+              {t.gdc}
             </button>
-            <button onClick={() => scrollToSection('product-tianxing')} className="w-full text-left text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+            <button onClick={() => scrollToSection('product-ark2')} className="w-full text-left text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+              {t.ark2}
+            </button>
+             <button onClick={() => scrollToSection('product-tianxing')} className="w-full text-left text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
               {t.tianxing}
-            </button>
-             <button onClick={() => scrollToSection('product-afl')} className="w-full text-left text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-              {t.afl}
             </button>
              <button onClick={() => scrollToSection('product-alipay')} className="w-full text-left text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
               {t.alipay}
