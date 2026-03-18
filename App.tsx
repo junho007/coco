@@ -9,9 +9,9 @@ import { CONTENT, PRODUCT_DETAILS } from './constants';
 import { Language } from './types';
 
 // Images
-import raftImg from './assets/raft.jpeg';
+import gdcImg from './assets/gdc.png';
 import tianxingImg from './assets/tianxing.jpeg';
-import aflImg from './assets/afl.jpeg';
+import ark2Img from './assets/ark2.png';
 import alipayImg from './assets/alipay.jpg';
 
 // Videos (Raft is skipped to show the 'Coming Soon' placeholder)
@@ -41,7 +41,7 @@ const App: React.FC = () => {
                 <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
                     {t.products.subtitle}
                 </p>
-              {t.products.description && (
+                {t.products.description && (
                   <p className="mt-4 max-w-3xl mx-auto text-lg text-gray-500">
                     {t.products.description}
                   </p>
@@ -52,30 +52,47 @@ const App: React.FC = () => {
         {/* Products List */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12 pb-32">
             
-            {/* Product 1: Raft */}
+            {/* Product 1: GDC (formerly Raft) */}
             <ProductCard 
-                id="product-raft"
+                id="product-gdc"
                 lang={lang}
-                content={t.cards.raft}
+                content={t.cards.gdc}
                 labels={t.products}
-                imageSrc={raftImg}
+                imageSrc="/gdc.png"
+                // videoSrc="/raft-guide.mp4"  <-- To add video: Uncomment and set path to file in public folder
                 details={{
-                    fees: getLangString(PRODUCT_DETAILS.raft, 'fees'),
-                    settlement: getLangString(PRODUCT_DETAILS.raft, 'settlement'),
-                    settlement_method: getLangString(PRODUCT_DETAILS.raft, 'settlement_method'),
-                    channels: getLangString(PRODUCT_DETAILS.raft, 'channels'),
-                    denominations: PRODUCT_DETAILS.raft.denominations
+                    fees: getLangString(PRODUCT_DETAILS.gdc, 'fees'),
+                    settlement: getLangString(PRODUCT_DETAILS.gdc, 'settlement'),
+                    settlement_method: getLangString(PRODUCT_DETAILS.gdc, 'settlement_method'),
+                    channels: getLangString(PRODUCT_DETAILS.gdc, 'channels'),
+                    denominations: PRODUCT_DETAILS.gdc.denominations
                 }}
             />
 
-            {/* Product 2: Tianxing */}
+             {/* Product 2: Ark2 (formerly AFL) */}
+             <ProductCard 
+                id="product-ark2"
+                lang={lang}
+                content={t.cards.ark2}
+                labels={t.products}
+                imageSrc="/ark2.png"
+                // videoSrc="/afl-guide.mp4" <-- To add video: Uncomment and set path to file in public folder
+                details={{
+                    fees: getLangString(PRODUCT_DETAILS.ark2, 'fees'),
+                    settlement: getLangString(PRODUCT_DETAILS.ark2, 'settlement'),
+                    settlement_method: getLangString(PRODUCT_DETAILS.ark2, 'settlement_method'),
+                    channels: getLangString(PRODUCT_DETAILS.ark2, 'channels'),
+                    denominations: PRODUCT_DETAILS.ark2.denominations
+                }}
+            />
+
+            {/* Product 3: Tianxing */}
             <ProductCard 
                 id="product-tianxing"
                 lang={lang}
                 content={t.cards.tianxing}
                 labels={t.products}
-                imageSrc={tianxingImg}
-                videoSrc={tianxingVideo}
+                // videoSrc="/tianxing-guide.mp4" <-- To add video: Uncomment and set path to file in public folder
                 details={{
                     fees: getLangString(PRODUCT_DETAILS.tianxing, 'fees'),
                     settlement: getLangString(PRODUCT_DETAILS.tianxing, 'settlement'),
@@ -85,30 +102,12 @@ const App: React.FC = () => {
                 }}
             />
 
-             {/* Product 3: AFL */}
-             <ProductCard 
-                id="product-afl"
-                lang={lang}
-                content={t.cards.afl}
-                labels={t.products}
-                imageSrc={aflImg}
-                videoSrc={aflVideo}
-                details={{
-                    fees: getLangString(PRODUCT_DETAILS.afl, 'fees'),
-                    settlement: getLangString(PRODUCT_DETAILS.afl, 'settlement'),
-                    settlement_method: getLangString(PRODUCT_DETAILS.afl, 'settlement_method'),
-                    channels: getLangString(PRODUCT_DETAILS.afl, 'channels'),
-                    denominations: PRODUCT_DETAILS.afl.denominations
-                }}
-            />
-
             {/* Product 4: Alipay */}
             <AlipaySection 
                 id="product-alipay"
                 lang={lang}
                 content={t.cards.alipay}
                 labels={t.products}
-                imageSrc={alipayImg}
                 details={{
                     tiers: PRODUCT_DETAILS.alipay.tiers,
                     rules: getLangString(PRODUCT_DETAILS.alipay, 'rules')
@@ -116,6 +115,7 @@ const App: React.FC = () => {
             />
 
         </section>
+
       </main>
 
       <Footer />
