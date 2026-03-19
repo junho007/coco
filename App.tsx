@@ -8,6 +8,11 @@ import { TelegramWidget } from './components/TelegramWidget';
 import { CONTENT, PRODUCT_DETAILS } from './constants';
 import { Language } from './types';
 
+import gdcImg from './assets/gdc.png';
+import ark2Img from './assets/ark2.png';
+import tianxingImg from './assets/tianxing.jpeg';
+import alipayImg from './assets/alipay.jpg';
+
 const App: React.FC = () => {
   const [lang, setLang] = useState<Language>('en');
   const t = CONTENT[lang];
@@ -45,7 +50,8 @@ const App: React.FC = () => {
                 lang={lang}
                 content={t.cards.gdc}
                 labels={t.products}
-                imageSrc="/gdc.png" // 👇 Direct path to your public folder
+                // 👇 2. USING THE VARIABLE (NO QUOTES!)
+                imageSrc={gdcImg} 
                 details={{
                     fees: getLangString(PRODUCT_DETAILS.gdc, 'fees'),
                     settlement: getLangString(PRODUCT_DETAILS.gdc, 'settlement'),
@@ -61,7 +67,8 @@ const App: React.FC = () => {
                 lang={lang}
                 content={t.cards.ark2}
                 labels={t.products}
-                imageSrc="/ark2.png" // 👇 Direct path to your public folder
+                // 👇 USING THE VARIABLE
+                imageSrc={ark2Img} 
                 details={{
                     fees: getLangString(PRODUCT_DETAILS.ark2, 'fees'),
                     settlement: getLangString(PRODUCT_DETAILS.ark2, 'settlement'),
@@ -77,7 +84,8 @@ const App: React.FC = () => {
                 lang={lang}
                 content={t.cards.tianxing}
                 labels={t.products}
-                imageSrc="/tianxing.jpeg" // 👇 Make sure this isn't .jpg in your folder!
+                // 👇 USING THE VARIABLE
+                imageSrc={tianxingImg} 
                 details={{
                     fees: getLangString(PRODUCT_DETAILS.tianxing, 'fees'),
                     settlement: getLangString(PRODUCT_DETAILS.tianxing, 'settlement'),
@@ -93,7 +101,8 @@ const App: React.FC = () => {
                 lang={lang}
                 content={t.cards.alipay}
                 labels={t.products}
-                imageSrc="/alipay.jpg" // 👇 Added the missing prop here!
+                // 👇 USING THE VARIABLE
+                imageSrc={alipayImg} 
                 details={{
                     tiers: PRODUCT_DETAILS.alipay.tiers,
                     rules: getLangString(PRODUCT_DETAILS.alipay, 'rules')
