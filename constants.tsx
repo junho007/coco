@@ -135,7 +135,7 @@ export const PRODUCT_DETAILS = {
     settlement_method_cn: "USDT (TRC-20)；国际remittance 可谈",
     settlement_method_en: "USDT (TRC-20); Intl Remittance Negotiable",
     channels_cn: "淘宝, 天猫, 京东 (搜 GDC Card / GDC 卡)",
-    channels_en: "Taobao, Tmall, JD (Search Raft Card)",
+    channels_en: "Taobao, Tmall, JD (Search GDC Card)",
     denominations: [
       "EUR 1.5 = CNY 11",
       "EUR 3 = CNY 22",
