@@ -5,7 +5,6 @@ export type Language = 'en' | 'cn';
 export interface Translation {
   nav: {
     raft: string;
-    tianxing: string;
     afl: string;
     alipay: string;
   };
@@ -35,11 +34,6 @@ export interface Translation {
   };
   cards: {
     raft: {
-      name: string;
-      type: string;
-      desc: string;
-    };
-    tianxing: {
       name: string;
       type: string;
       desc: string;
