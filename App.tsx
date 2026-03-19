@@ -78,24 +78,7 @@ const App: React.FC = () => {
                 }}
             />
 
-            {/* Product 3: Tianxing */}
-            <ProductCard 
-                id="product-tianxing"
-                lang={lang}
-                content={t.cards.tianxing}
-                labels={t.products}
-                // 👇 USING THE VARIABLE
-                imageSrc={tianxingImg} 
-                details={{
-                    fees: getLangString(PRODUCT_DETAILS.tianxing, 'fees'),
-                    settlement: getLangString(PRODUCT_DETAILS.tianxing, 'settlement'),
-                    settlement_method: getLangString(PRODUCT_DETAILS.tianxing, 'settlement_method'),
-                    channels: getLangString(PRODUCT_DETAILS.tianxing, 'channels'),
-                    denominations: PRODUCT_DETAILS.tianxing.denominations
-                }}
-            />
-
-            {/* Product 4: Alipay */}
+            {/* Product 3: Alipay */}
             <AlipaySection 
                 id="product-alipay"
                 lang={lang}
