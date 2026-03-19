@@ -12,7 +12,6 @@ export const CONTENT: Record<string, Translation> = {
     nav: {
       gdc: "GDC Card",
       ark2: "ARK2 Card",
-      tianxing: "Tianxing Card",
       alipay: "Alipay",
     },
     hero: {
@@ -50,12 +49,6 @@ export const CONTENT: Record<string, Translation> = {
         type: "Standard Rate Card",
         image: ark2Img,
       },
-      tianxing: {
-        name: "Tianxing Card",
-        type: "Standard Rate Card",
-        image: tianxingImg,
-        video: tianxingVideo,
-      },
       alipay: {
         name: "Alipay Collections",
         image: alipayImg,
@@ -72,7 +65,6 @@ export const CONTENT: Record<string, Translation> = {
     nav: {
       gdc: "GDC 卡",
       ark2: "ARK2 卡",
-      tianxing: "添星卡",
       alipay: "支付宝",
     },
     hero: {
@@ -107,10 +99,6 @@ export const CONTENT: Record<string, Translation> = {
       ark2: {
         name: "ARK2 卡",
         type: "ARK2(平价卡)",
-      },
-      tianxing: {
-        name: "添星卡",
-        type: "银盈添星(平价卡)",
       },
       alipay: {
         name: "支付宝 (Alipay)",
@@ -167,20 +155,6 @@ export const PRODUCT_DETAILS = {
       "EUR 42 = CNY 300",
       "EUR 70 = CNY 500",
       "EUR 140 = CNY 1,000"
-    ]
-  },
-  tianxing: {
-    fees_cn: "询问",
-    fees_en: "REQUEST",
-    settlement_cn: "D0 (回U欧易支付宝三档上0.12)",
-    settlement_en: "D0 (USDT/OKX Tier 3 + 0.12)",
-    settlement_method_cn: "USDT (TRC-20)；国际remittance 可谈",
-    settlement_method_en: "USDT (TRC-20); Intl Remittance Negotiable",
-    channels_cn: "淘宝, 天猫, 京东 (搜 添星卡)",
-    channels_en: "Taobao, Tmall, JD (Search Tianxing Card)",
-    denominations: [
-      "RMB 10", "RMB 20", "RMB 30", "RMB 50", "RMB 100", 
-      "RMB 200", "RMB 300", "RMB 500", "RMB 1000"   
     ]
   },
   alipay: {
