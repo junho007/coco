@@ -182,7 +182,7 @@ export const PRODUCT_DETAILS = {
     ],
     rules_cn: [
       "支付宝代收：询问",
-      "结算USDT 汇率参考okx c2c 盘口模式第三档 上浮最高0.02",
+      "结算USDT 汇率参考okx c2c 盘口模式第三档 上浮最高0.12",
       "支付宝代收交易时间：9:00-24:00 每日23:00-24:00为日切时间",
       "结算USDT，最低结算要求7000U起",
       "结算 D0",
@@ -190,7 +190,7 @@ export const PRODUCT_DETAILS = {
     ],
     rules_en: [
       "Alipay Collection Fee: REQUEST",
-      "USDT Settlement Rate: OKX C2C Market Tier 3 + max 0.02",
+      "USDT Settlement Rate: OKX C2C Market Tier 3 + max 0.12",
       "Transaction Hours: 09:00 - 24:00 (Daily cut-off 23:00-24:00)",
       "Min Settlement: 7000 USDT",
       "Settlement Time: D0",
