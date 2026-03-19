@@ -125,9 +125,6 @@ export const PRODUCT_DETAILS = {
     channels_cn: "淘宝, 天猫, 京东 (搜 GDC Card / GDC 卡)",
     channels_en: "Taobao, Tmall, JD (Search GDC Card)",
     denominations: [
-      "EUR 1.5 = CNY 11",
-      "EUR 3 = CNY 22",
-      "EUR 4.5 = CNY 33",
       "EUR 7 = CNY 50",
       "EUR 14 = CNY 100",
       "EUR 28 = CNY 200",
@@ -146,9 +143,9 @@ export const PRODUCT_DETAILS = {
     channels_cn: "淘宝, 天猫, 京东 (搜 ARK2 卡)",
     channels_en: "Taobao, Tmall, JD (Search ARK2 Card)",
     denominations: [
-      "EUR 1.5 = CNY 11",
-      "EUR 3 = CNY 22",
-      "EUR 4.5 = CNY 33",
+      "EUR 1.5 = CNY 10",
+      "EUR 3 = CNY 20",
+      "EUR 4.5 = CNY 30",
       "EUR 7 = CNY 50",
       "EUR 14 = CNY 100",
       "EUR 28 = CNY 200",
