@@ -8,21 +8,10 @@ import { TelegramWidget } from './components/TelegramWidget';
 import { CONTENT, PRODUCT_DETAILS } from './constants';
 import { Language } from './types';
 
-// Images
-import gdcImg from './assets/gdc.png';
-import tianxingImg from './assets/tianxing.jpeg';
-import ark2Img from './assets/ark2.png';
-import alipayImg from './assets/alipay.jpg';
-
-// Videos (Raft is skipped to show the 'Coming Soon' placeholder)
-import tianxingVideo from './assets/tianxing.mp4';
-import aflVideo from './assets/afl.mp4';
-
 const App: React.FC = () => {
   const [lang, setLang] = useState<Language>('en');
   const t = CONTENT[lang];
   
-  // Helper to pick correct language string from details
   const getLangString = (obj: any, keyPrefix: string) => {
     return obj[`${keyPrefix}_${lang}`];
   };
@@ -34,7 +23,6 @@ const App: React.FC = () => {
       <main>
         <Hero t={t.hero} />
 
-        {/* Pricing/Products Header */}
         <section id="products" className="bg-white pt-24 pb-12 px-4 sm:px-6 lg:px-8 border-b border-gray-100">
             <div className="max-w-7xl mx-auto text-center">
                 <h2 className="text-base font-bold text-primary tracking-wide uppercase">{t.products.title}</h2>
@@ -49,17 +37,15 @@ const App: React.FC = () => {
             </div>
         </section>
 
-        {/* Products List */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12 pb-32">
             
-            {/* Product 1: GDC (formerly Raft) */}
+            {/* Product 1: GDC */}
             <ProductCard 
                 id="product-gdc"
                 lang={lang}
                 content={t.cards.gdc}
                 labels={t.products}
-                imageSrc="/gdc.png"
-                // videoSrc="/raft-guide.mp4"  <-- To add video: Uncomment and set path to file in public folder
+                imageSrc="/gdc.png" // 👇 Direct path to your public folder
                 details={{
                     fees: getLangString(PRODUCT_DETAILS.gdc, 'fees'),
                     settlement: getLangString(PRODUCT_DETAILS.gdc, 'settlement'),
@@ -69,14 +55,13 @@ const App: React.FC = () => {
                 }}
             />
 
-             {/* Product 2: Ark2 (formerly AFL) */}
+             {/* Product 2: Ark2 */}
              <ProductCard 
                 id="product-ark2"
                 lang={lang}
                 content={t.cards.ark2}
                 labels={t.products}
-                imageSrc="/ark2.png"
-                // videoSrc="/afl-guide.mp4" <-- To add video: Uncomment and set path to file in public folder
+                imageSrc="/ark2.png" // 👇 Direct path to your public folder
                 details={{
                     fees: getLangString(PRODUCT_DETAILS.ark2, 'fees'),
                     settlement: getLangString(PRODUCT_DETAILS.ark2, 'settlement'),
@@ -92,7 +77,7 @@ const App: React.FC = () => {
                 lang={lang}
                 content={t.cards.tianxing}
                 labels={t.products}
-                // videoSrc="/tianxing-guide.mp4" <-- To add video: Uncomment and set path to file in public folder
+                imageSrc="/tianxing.jpeg" // 👇 Make sure this isn't .jpg in your folder!
                 details={{
                     fees: getLangString(PRODUCT_DETAILS.tianxing, 'fees'),
                     settlement: getLangString(PRODUCT_DETAILS.tianxing, 'settlement'),
@@ -108,6 +93,7 @@ const App: React.FC = () => {
                 lang={lang}
                 content={t.cards.alipay}
                 labels={t.products}
+                imageSrc="/alipay.jpg" // 👇 Added the missing prop here!
                 details={{
                     tiers: PRODUCT_DETAILS.alipay.tiers,
                     rules: getLangString(PRODUCT_DETAILS.alipay, 'rules')
@@ -115,7 +101,6 @@ const App: React.FC = () => {
             />
 
         </section>
-
       </main>
 
       <Footer />
