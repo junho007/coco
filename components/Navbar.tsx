@@ -57,9 +57,6 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t }) => {
               <button onClick={() => scrollToSection('product-ark2')} className="text-gray-200 hover:text-white hover:bg-white/10 px-3 py-2 rounded-md text-sm font-semibold transition-all">
                 {t.ark2}
               </button>
-              <button onClick={() => scrollToSection('product-tianxing')} className="text-gray-200 hover:text-white hover:bg-white/10 px-3 py-2 rounded-md text-sm font-semibold transition-all">
-                {t.tianxing}
-              </button>
               <button onClick={() => scrollToSection('product-alipay')} className="text-gray-200 hover:text-white hover:bg-white/10 px-3 py-2 rounded-md text-sm font-semibold transition-all">
                 {t.alipay}
               </button>
@@ -98,9 +95,6 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t }) => {
             </button>
             <button onClick={() => scrollToSection('product-ark2')} className="w-full text-left text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
               {t.ark2}
-            </button>
-             <button onClick={() => scrollToSection('product-tianxing')} className="w-full text-left text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-              {t.tianxing}
             </button>
              <button onClick={() => scrollToSection('product-alipay')} className="w-full text-left text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
               {t.alipay}
