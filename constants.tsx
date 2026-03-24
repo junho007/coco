@@ -12,6 +12,7 @@ export const CONTENT: Record<string, Translation> = {
     nav: {
       gdc: "GDC Card",
       ark2: "ARK2 Card",
+      raft_card: "Raft Card",
       alipay: "Alipay",
     },
     hero: {
@@ -49,6 +50,11 @@ export const CONTENT: Record<string, Translation> = {
         type: "Standard Rate Card",
         image: ark2Img,
       },
+      raft_card: {
+        name: "Raft Card",
+        type: "Premium Recharge Card",
+        desc: "High-value premium card options for international settlement.",
+      },
       alipay: {
         name: "Alipay Collections",
         image: alipayImg,
@@ -65,6 +71,7 @@ export const CONTENT: Record<string, Translation> = {
     nav: {
       gdc: "GDC 卡",
       ark2: "ARK2 卡",
+      raft_card: "Raft 卡",
       alipay: "支付宝",
     },
     hero: {
@@ -99,6 +106,10 @@ export const CONTENT: Record<string, Translation> = {
       ark2: {
         name: "ARK2 卡",
         type: "ARK2(平价卡)",
+      },
+      raft_card: {
+        name: "Raft 卡",
+        type: "RAFT 溢价卡",
       },
       alipay: {
         name: "支付宝 (Alipay)",
@@ -146,6 +157,24 @@ export const PRODUCT_DETAILS = {
       "EUR 1.5 = CNY 10",
       "EUR 3 = CNY 20",
       "EUR 4.5 = CNY 30",
+      "EUR 7 = CNY 50",
+      "EUR 14 = CNY 100",
+      "EUR 28 = CNY 200",
+      "EUR 42 = CNY 300",
+      "EUR 70 = CNY 500",
+      "EUR 140 = CNY 1,000"
+    ]
+  },
+  raft_card: {
+    fees_cn: "询问",
+    fees_en: "REQUEST",
+    settlement_cn: "D0 (回U欧易支付宝三档上0.12)",
+    settlement_en: "D0 (USDT/OKX Tier 3 + 0.12)",
+    settlement_method_cn: "USDT (TRC-20)；国际remittance 可谈",
+    settlement_method_en: "USDT (TRC-20); Intl Remittance Negotiable",
+    channels_cn: "淘宝, 天猫, 京东 (搜 Raft Card / Raft卡)",
+    channels_en: "Taobao, Tmall, JD (Search Raft Card)",
+    denominations: [
       "EUR 7 = CNY 50",
       "EUR 14 = CNY 100",
       "EUR 28 = CNY 200",
