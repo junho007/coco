@@ -44,7 +44,6 @@ export const CONTENT: Record<string, Translation> = {
       raft_card: {
         name: "Raft Card",
         type: "Premium Recharge Card",
-        desc: "High-value premium card options for international settlement.",
       },
       alipay: {
         name: "Alipay Collections",
