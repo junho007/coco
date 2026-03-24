@@ -12,6 +12,10 @@ import gdcImg from './assets/gdc.png';
 import ark2Img from './assets/ark2.png';
 import tianxingImg from './assets/tianxing.jpeg';
 import alipayImg from './assets/alipay.jpg';
+import raftImg from './assets/raft.jpeg';
+
+import gdcVideo from './assets/gdc.mp4';
+import raftVideo from './assets/raft.mp4';
 
 const App: React.FC = () => {
   const [lang, setLang] = useState<Language>('en');
@@ -50,8 +54,8 @@ const App: React.FC = () => {
                 lang={lang}
                 content={t.cards.gdc}
                 labels={t.products}
-                // 👇 2. USING THE VARIABLE (NO QUOTES!)
                 imageSrc={gdcImg} 
+                videoSrc={gdcVideo}
                 details={{
                     fees: getLangString(PRODUCT_DETAILS.gdc, 'fees'),
                     settlement: getLangString(PRODUCT_DETAILS.gdc, 'settlement'),
@@ -67,7 +71,6 @@ const App: React.FC = () => {
                 lang={lang}
                 content={t.cards.ark2}
                 labels={t.products}
-                // 👇 USING THE VARIABLE
                 imageSrc={ark2Img} 
                 details={{
                     fees: getLangString(PRODUCT_DETAILS.ark2, 'fees'),
@@ -78,13 +81,29 @@ const App: React.FC = () => {
                 }}
             />
 
-            {/* Product 3: Alipay */}
+            {/* Product 3: Raft Card */}
+            <ProductCard 
+                id="product-raft-card"
+                lang={lang}
+                content={t.cards.raft_card}
+                labels={t.products}
+                imageSrc={raftImg} 
+                videoSrc={raftVideo}
+                details={{
+                    fees: getLangString(PRODUCT_DETAILS.raft_card, 'fees'),
+                    settlement: getLangString(PRODUCT_DETAILS.raft_card, 'settlement'),
+                    settlement_method: getLangString(PRODUCT_DETAILS.raft_card, 'settlement_method'),
+                    channels: getLangString(PRODUCT_DETAILS.raft_card, 'channels'),
+                    denominations: PRODUCT_DETAILS.raft_card.denominations
+                }}
+            />
+          
+            {/* Product 4: Alipay */}
             <AlipaySection 
                 id="product-alipay"
                 lang={lang}
                 content={t.cards.alipay}
                 labels={t.products}
-                // 👇 USING THE VARIABLE
                 imageSrc={alipayImg} 
                 details={{
                     tiers: PRODUCT_DETAILS.alipay.tiers,
