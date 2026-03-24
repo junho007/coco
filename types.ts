@@ -6,6 +6,7 @@ export interface Translation {
   nav: {
     raft: string;
     afl: string;
+    raft_card: string;
     alipay: string;
   };
   hero: {
@@ -39,6 +40,11 @@ export interface Translation {
       desc: string;
     };
     afl: {
+      name: string;
+      type: string;
+      desc: string;
+    };
+    raft_card: {
       name: string;
       type: string;
       desc: string;
