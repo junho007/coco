@@ -1,11 +1,4 @@
-import React from 'react';
 import { Translation } from './types';
-import { CreditCard, Zap, Globe, ShieldCheck } from 'lucide-react';
-import gdcImg from './assets/gdc.png';
-import tianxingImg from './assets/tianxing.jpeg';
-import tianxingVideo from './assets/tianxing.mp4';
-import ark2Img from './assets/ark2.png';
-import alipayImg from './assets/alipay.jpg';
 
 export const CONTENT: Record<string, Translation> = {
   en: {
@@ -43,12 +36,10 @@ export const CONTENT: Record<string, Translation> = {
       gdc: {
         name: "GDC Card",
         type: "Premium Recharge Card",
-        image: gdcImg,
       },
        ark2: {
         name: "ARK2 Card",
         type: "Standard Rate Card",
-        image: ark2Img,
       },
       raft_card: {
         name: "Raft Card",
@@ -57,7 +48,6 @@ export const CONTENT: Record<string, Translation> = {
       },
       alipay: {
         name: "Alipay Collections",
-        image: alipayImg,
         tiers: {
           small: "Small Amount UID",
           medium: "Medium Amount UID",
@@ -77,7 +67,7 @@ export const CONTENT: Record<string, Translation> = {
     hero: {
       badge: "最新：加密货币结算已上线 🚀",
       title: "一站式全球支付解决方案 · 国际企业首选平台",
-      titleHighlight: <><br className="block md:hidden" />COCOPAY</>,
+      titleHighlight: "首选 COCOPAY", // 👇 Fixed: Removed the fatal <br> tags
       subtitle: "以专业构建的智能支付系统，打通本地与全球资金通道，助力企业无缝接收全球线上支付，轻松拓展国际市场版图，加速业务增长与资本流转。",
       ctaPrimary: "立即开始",
       features: {
@@ -88,7 +78,7 @@ export const CONTENT: Record<string, Translation> = {
     },
     products: {
       title: "费率与结算",
-      subtitle: <>与 COCOPAY 共同成长 · <br className="block sm:hidden" />极致透明 · 成本优化</>,
+      subtitle: "与 COCOPAY 共同成长 · 极致透明 · 成本优化", // 👇 Fixed: Removed the fatal <br> tags
       description: "我们提供清晰透明的费率结构与高效结算机制，帮助企业有效降低交易成本，优化现金流管理。在保障安全与稳定的同时，让每一笔交易都更具价值，与您共同迈向长期增长",
       fees: "费用",
       settlement: "结算时间",
@@ -124,7 +114,6 @@ export const CONTENT: Record<string, Translation> = {
   }
 };
 
-// Raw data for tables that doesn't change structure but might change label based on language
 export const PRODUCT_DETAILS = {
   gdc: {
     fees_cn: "询问",
@@ -185,26 +174,10 @@ export const PRODUCT_DETAILS = {
   },
   alipay: {
     tiers: [
-      {
-        key: 'small',
-        code: '8035',
-        amount: '200-1000',
-      },
-      {
-        key: 'medium',
-        code: '8034',
-        amount: '500-3000',
-      },
-      {
-        key: 'large',
-        code: '8029',
-        amount: '800-5000',
-      },
-      {
-        key: 'xlarge',
-        code: '8022',
-        amount: '2000-20000',
-      },
+      { key: 'small', code: '8035', amount: '200-1000' },
+      { key: 'medium', code: '8034', amount: '500-3000' },
+      { key: 'large', code: '8029', amount: '800-5000' },
+      { key: 'xlarge', code: '8022', amount: '2000-20000' },
     ],
     rules_cn: [
       "支付宝代收：询问",
