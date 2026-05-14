@@ -15,6 +15,7 @@ import alipayImg from './assets/alipay.jpg';
 import raftImg from './assets/raft.jpeg';
 
 import gdcVideo from './assets/gdc.mp4';
+import ark2Video from './assets/ark2.mp4';
 
 const App: React.FC = () => {
   const [lang, setLang] = useState<Language>('en');
@@ -71,6 +72,7 @@ const App: React.FC = () => {
                 content={t.cards.ark2}
                 labels={t.products}
                 imageSrc={ark2Img} 
+                videoSrc={ark2Video}
                 details={{
                     fees: getLangString(PRODUCT_DETAILS.ark2, 'fees'),
                     settlement: getLangString(PRODUCT_DETAILS.ark2, 'settlement'),
